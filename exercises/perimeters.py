@@ -15,6 +15,7 @@ while True:
             2 - Calcular o perimetro em centímetros de um quadrado/losangulo
             3 - Calcular o perimetro em centímetros de um retangulo
             4 - Calcular o perimetro em centímetros de um trapézio
+            5 - Calcular o perimetro em centímetros de um circulo
 
 
         """)
@@ -115,9 +116,27 @@ while True:
 
             O = float(O)
 
-            P = m + M + 2 * O  
+            P = m + M + 2 * O
 
             print(f"A medida em centímetros do trapézio é de: {P:.2f}cm")
 
+            break
+
+        if choice == 5:
+
+            R = input("Digite a medida em centímetros do raio: ")
+
+            if not R.strip():
+
+                print("Você não digitou nada, tente novamente!")
+
+                continue
+
+            measure = float(R)
+
+            P = 2 * math.pi * measure
+
+            print(f"A medida em centímetros do circulo é de {P:.2f}cm")
+
     except ValueError:
-        print()
+        print("Erro!, digite um valor válido")
